@@ -7,9 +7,7 @@ namespace  Commander.Utilities
     {
         private static byte[] IV_192;
         private static byte[] KEY_192;
-        private static string T_key = "b;=iS@@BlJQhkz?2Y^PyBdMy";
-        private static string N_key = "01234567890123456789012345678901234567890123456789012345678901234567890123456789";
-
+        private static string T_key = "kg{$)B8h).qr14H::vT;pNEl";
         public static void GetTripleDesConfiguration()
         {
             try
@@ -109,20 +107,5 @@ namespace  Commander.Utilities
             return empty1;
         }
 
-        public static string Encdes(string enc, int type)
-        {
-           string outstring = "";
-            int num = 0;
-
-            // 0 : enc , 1 : dec
-            if (type == 0) num = 0; else if (type == 1) num = 2;
-
-            for (int i2 = 0; i2 < enc.Length; i2++)
-            {
-                outstring = outstring + (char)(enc[i2] + N_key[i2] - N_key[i2 + 1] + num);
-            }
-
-            return outstring;
-        }
     }
 }
